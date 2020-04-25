@@ -12,6 +12,8 @@ export default function Pontos() {
     async function loadPontos() {
       const response = await api.get('pontos');
 
+      console.log(response.data);
+
       setPontos(response.data);
     }
 

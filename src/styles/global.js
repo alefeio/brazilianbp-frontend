@@ -21,9 +21,26 @@ export default createGlobalStyle`
     height: 100%;
   }
 
+  html {
+    font-size: 62.5%;
+  }
+
+  @media (max-width: 1080px) {
+    html {
+      font-size: 58%;
+  }
+    }
+
+  @media (max-width: 720px) {
+    html {
+      font-size: 54%;
+    }
+  }
+
   body {
     -webkit-font-smoothing: antialiased;
     background: #ddc063;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
   }

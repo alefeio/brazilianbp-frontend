@@ -14,7 +14,7 @@ export default function Produto(props) {
     async function loadProduto() {
       const response = await api.get(`produtos/${id}`);
 
-      console.tron.log(response.data);
+      console.log(response.data);
       setProduto(response.data);
       setImagem(response.data.imagem.url);
     }

@@ -28,6 +28,8 @@ export default function Receita(props) {
     async function loadReceita() {
       const response = await api.get(`receitas/${id}`);
 
+      console.log(response.data);
+
       setReceita(response.data);
       setImagem(response.data.imagem.url);
       setIngred(response.data.ingredientes);

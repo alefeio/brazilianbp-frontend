@@ -15,7 +15,7 @@ export default function Ponto(props) {
     async function loadPonto() {
       const response = await api.get(`pontos/${id}`);
 
-      console.tron.log(response.data);
+      console.log(response.data);
       setPonto(response.data);
       setImagem(response.data.imagem.url);
     }

@@ -12,7 +12,7 @@ export default function Receitas() {
     async function loadProdutos() {
       const response = await api.get('receitas');
 
-      console.tron.log(`Receitas ${response.data}`);
+      console.log(response.data);
 
       setReceitas(response.data);
     }

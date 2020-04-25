@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import icosearch from '~/assets/ico-search.jpg';
+import iconav from '~/assets/icon-nav.png';
 
 export const Container = styled.div`
   padding: 0 10px;
@@ -61,6 +62,21 @@ export const Content = styled.div`
     &::placeholder {
       color: #222;
     }
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      display: none;
+    }
+  }
+
+  > a {
+    width: 40px;
+    height: 40px;
+    background: url(${iconav}) center center no-repeat;
+    background-size: cover;
+    display: block;
+    font-size: ${(props) => `${props.visivel}px`};
   }
 `;
 

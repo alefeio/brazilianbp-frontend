@@ -10,6 +10,10 @@ import icoPerfil from '~/assets/imgPerfil.png';
 
 import { store } from '~/store';
 
+let menu = 20;
+
+function toggle() {}
+
 export default function Header() {
   const perfil = useSelector((state) => state.usuario.perfil);
   const { logado } = store.getState().auth;
@@ -22,6 +26,9 @@ export default function Header() {
             <img src={logo} alt="Brazilian Black Pepper" />
           </Link>
         </div>
+        <a href="#" visivel={20}>
+          Teste
+        </a>
         <nav>
           <ul>
             <li>
@@ -50,10 +57,7 @@ export default function Header() {
               <strong>{perfil && perfil.nome}</strong>
               <Link to="/perfil">Meu perfil</Link>
             </div>
-            <img
-              src={(perfil && perfil.imagem.url) || icoPerfil}
-              alt="Perfil do usuário"
-            />
+            <img src={perfil.imagem.url || icoPerfil} alt="Perfil do usuário" />
           </Profile>
         )}
       </Content>
