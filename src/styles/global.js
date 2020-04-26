@@ -39,7 +39,9 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background: #ddc063;
+    background-image: linear-gradient(-19deg, #d0b45b 0%, #ddc063 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -51,6 +53,7 @@ export default createGlobalStyle`
 
   a {
     text-decoration: none;
+    transition: 0.3s;
   }
 
   ul {

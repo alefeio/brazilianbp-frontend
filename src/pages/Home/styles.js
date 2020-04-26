@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 import trabalhe from '~/assets/trabalhe.png';
+import quemsomos from '~/assets/quem-somos.png';
 
 export const Container = styled.div`
   background: #fff;
@@ -18,11 +19,19 @@ export const Banner = styled.div`
 `;
 
 export const Quemsomos = styled.div`
+  background: url(${quemsomos}) right center no-repeat;
+  background-size: cover;
+  height: 486px;
   width: 100%;
 
   img {
     height: 100%;
     width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    height: 380px;
+    background-position-x: right;
   }
 `;
 
@@ -34,6 +43,15 @@ export const Trabalhe = styled.div`
   height: 500px;
   background: url(${trabalhe}) top center;
   background-size: cover;
+
+  @media (max-width: 720px) {
+    text-align: center;
+    padding: 20px;
+
+    h2 {
+      font-size: 15px;
+    }
+  }
 
   h2 {
     margin-top: 80px;

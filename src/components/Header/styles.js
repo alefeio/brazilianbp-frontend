@@ -1,7 +1,17 @@
 import styled from 'styled-components';
 
 import icosearch from '~/assets/ico-search.jpg';
-import iconav from '~/assets/icon-nav.png';
+
+export const Img = styled.img`
+  width: 40px;
+  height: 40px;
+  display: none;
+
+  @media (max-width: 720px) {
+    display: block;
+    z-index: 100;
+  }
+`;
 
 export const Container = styled.div`
   padding: 0 10px;
@@ -19,14 +29,16 @@ export const Content = styled.div`
     min-width: 100px;
     flex: 1;
     margin-right: 50px;
-  }
 
-  img {
-    width: 100%;
-    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
+`;
 
-  nav ul {
+export const Nav = styled.nav`
+  ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,7 +46,7 @@ export const Content = styled.div`
     flex-wrap: wrap;
   }
 
-  nav ul li a {
+  ul li a {
     font-size: 16px;
     font-weight: bold;
     color: #00170e;
@@ -48,7 +60,7 @@ export const Content = styled.div`
     }
   }
 
-  nav ul li input {
+  ul li input {
     width: 150px;
     background: transparent;
     border: 1px solid #c2a549;
@@ -65,18 +77,34 @@ export const Content = styled.div`
   }
 
   @media (max-width: 720px) {
-    nav {
-      display: none;
-    }
-  }
+    display: ${(props) => (props.exibir ? 'flex' : 'none')};
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.9);
 
-  > a {
-    width: 40px;
-    height: 40px;
-    background: url(${iconav}) center center no-repeat;
-    background-size: cover;
-    display: block;
-    font-size: ${(props) => `${props.visivel}px`};
+    ul {
+      flex-direction: column;
+    }
+
+    ul li {
+      margin: 5px;
+      padding: 0.5rem;
+    }
+
+    ul li a {
+      font-size: 2.4rem;
+      color: #fff;
+
+      &:hover {
+        color: #c2a549;
+      }
+    }
   }
 `;
 

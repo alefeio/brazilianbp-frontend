@@ -8,20 +8,42 @@ export const Container = styled.div`
 
 export const Prod = styled.div`
   display: flex;
-  flex-direction: row;
   flex: 1;
   justify-content: center;
   align-items: flex-start;
   padding: 50px;
+  width: 100%;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    padding: 10px;
+
+    div {
+      padding: 0;
+      margin: 0;
+
+      img {
+        width: 80%;
+      }
+    }
+  }
 
   div {
     padding: 50px;
     border-radius: 4px;
+    width: 100%;
 
     img {
-      max-height: 450px;
-      max-width: 450px;
-      margin: 50px 0;
+      height: 100%;
+      width: 100%;
+      margin: 50px auto;
+      transition: 1s;
+      cursor: zoom-in;
+
+      &:hover {
+        height: 150%;
+        width: 150%;
+      }
     }
 
     h1 {

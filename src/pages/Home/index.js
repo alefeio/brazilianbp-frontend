@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import api from '~/services/api';
 
 import banner from '~/assets/banner.jpg';
-import quemsomos from '~/assets/quem-somos.png';
 
 import { Banner, Quemsomos, Trabalhe, Container } from './styles';
 
@@ -39,12 +38,7 @@ export default function Home() {
       <Banner>
         <img src={banner} alt="Sua vida mais apimentada" />
       </Banner>
-      <Quemsomos>
-        <img
-          src={quemsomos}
-          alt="Brazilian Black Pepper - O sabor que faltava na sua vida."
-        />
-      </Quemsomos>
+      <Quemsomos />
       <Trabalhe>
         <h2>Trabalhe com a gente!</h2>
         <Form schema={schema} onSubmit={handleSubmit}>

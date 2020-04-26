@@ -12,8 +12,6 @@ export default function Produtos() {
     async function loadProdutos() {
       const response = await api.get('produtos');
 
-      console.log(response.data);
-
       setProdutos(response.data);
     }
 

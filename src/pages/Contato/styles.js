@@ -15,14 +15,32 @@ export const Prod = styled.div`
   align-items: flex-start;
   padding: 50px;
 
+  @media (max-width: 720px) {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+
+    div {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+
+      img {
+        width: 50%;
+      }
+    }
+  }
+
   div {
     padding: 50px;
     border-radius: 4px;
+    width: 100%;
+    text-align: center;
 
     img {
-      max-height: 450px;
-      max-width: 450px;
-      margin: 50px 0;
+      height: 90%;
+      width: 90%;
+      margin: 50px auto;
     }
 
     h1 {
@@ -86,6 +104,12 @@ export const Contact = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  @media (max-width: 720px) {
+    form {
+      width: 100%;
+    }
+  }
 
   h2 {
     font-size: 30px;

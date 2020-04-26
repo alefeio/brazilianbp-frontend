@@ -1,22 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import logo from '~/assets/logo.png';
+import iconav from '~/assets/icon-nav2.png';
+import iconavx from '~/assets/icon-nav_x2.png';
 
-import { Container, Content, Profile } from './styles';
+import { Container, Content, Profile, Img, Nav } from './styles';
 
 import icoPerfil from '~/assets/imgPerfil.png';
 
 import { store } from '~/store';
 
-let menu = 20;
-
-function toggle() {}
-
 export default function Header() {
+  const [checked, setChecked] = useState(false);
+
   const perfil = useSelector((state) => state.usuario.perfil);
   const { logado } = store.getState().auth;
+
+  function altChecked() {
+    setChecked(!checked);
+  }
+
+  const Toggle = () => {
+    return (
+      <Img src={checked ? iconavx : iconav} alt="Menu" onClick={altChecked} />
+    );
+  };
 
   return (
     <Container>
@@ -26,31 +36,39 @@ export default function Header() {
             <img src={logo} alt="Brazilian Black Pepper" />
           </Link>
         </div>
-        <a href="#" visivel={20}>
-          Teste
-        </a>
-        <nav>
+        <Toggle />
+        <Nav exibir={checked}>
           <ul>
             <li>
-              <Link to="/">INÍCIO</Link>
+              <Link to="/" onClick={altChecked}>
+                INÍCIO
+              </Link>
             </li>
             <li>
-              <Link to="/produtos">PRODUTOS</Link>
+              <Link to="/produtos" onClick={altChecked}>
+                PRODUTOS
+              </Link>
             </li>
             <li>
-              <Link to="/receitas">RECEITAS</Link>
+              <Link to="/receitas" onClick={altChecked}>
+                RECEITAS
+              </Link>
             </li>
             <li>
-              <Link to="/pontos">ONDE ENCONTRAR</Link>
+              <Link to="/pontos" onClick={altChecked}>
+                ONDE ENCONTRAR
+              </Link>
             </li>
             <li>
-              <Link to="/contato">CONTATO</Link>
+              <Link to="/contato" onClick={altChecked}>
+                CONTATO
+              </Link>
             </li>
             {/* <li>
               <input type="search" placeholder="Buscar" />
             </li> */}
           </ul>
-        </nav>
+        </Nav>
         {logado && (
           <Profile>
             <div>

@@ -3,15 +3,30 @@ import styled from 'styled-components';
 export const Rod = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #000;
   padding: 20px 30px;
 
+  @media (max-width: 720px) {
+    flex-direction: column;
+    justify-content: center;
+
+    ul {
+      width: 100%;
+    }
+
+    ul li img {
+      margin: 0 auto;
+    }
+  }
+
   ul {
     max-width: 250px;
+    margin: 20px;
   }
 
   ul:first-child {
-    border-left: 5px solid #487f2b;
+    border-left: 6px solid #487f2b;
   }
 
   ul li {

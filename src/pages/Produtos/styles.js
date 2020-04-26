@@ -39,17 +39,28 @@ export const ListaProdutos = styled.ul`
   grid-gap: 30px;
   padding: 50px;
 
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   li {
     display: flex;
     flex-direction: column;
     background: #fff;
     border-radius: 4px;
     padding: 20px;
+    overflow: hidden;
 
     img {
       align-self: center;
-      max-width: 250px;
-      max-height: 150px;
+      width: 250px;
+      height: 250px;
+      transition: 1s;
+
+      &:hover {
+        width: 350px;
+        height: 350px;
+      }
     }
 
     > strong {
